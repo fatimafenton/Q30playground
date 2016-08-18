@@ -1,5 +1,13 @@
-<?php get_header(); ?>
 
-	<h1>This is my first wordpress theme</h1>
+<?php get_header(); ?>
+	
+		<?php if ( have_posts() ) : ?>
+	               <?php while ( have_posts() ) : the_post(); ?>
+	                   <h3> <?php the_title(); ?></h3>
+	                   	 <p> <?php the_content(); ?></p>
+	                   	 <hr>
+	              <?php endwhile; ?>
+       <?php endif; ?>
+
 
 <?php get_footer(); ?>
